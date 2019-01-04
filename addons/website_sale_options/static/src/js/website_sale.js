@@ -42,6 +42,11 @@ $(document).ready(function () {
                         });
                         $modal.modal('hide');
                     });
+                
+                    $modal.on('click', '.css_attribute_color input', function (event) {
+                        $modal.find('.css_attribute_color').removeClass("active");
+                        $modal.find('.css_attribute_color:has(input:checked)').addClass("active");
+                    });
 
                     $modal.on("click", "a.js_add, a.js_remove", function (event) {
                         event.preventDefault();
